@@ -46,14 +46,13 @@ def convolution(x, h):
 
 #part3:
 
-start = -5
-end = 10
-n = np.arange(-10, 10, 1)
-x = np.power(1/3, n)*(np.heaviside(n, 1)-np.heaviside(n-10, 1))
-h = np.power(0.9, n)*(np.heaviside(n-5, 1)-np.heaviside(n, 1))
-y = convolution(x, h)
+n3 = np.arange(-10, 10, 1)
+x3 = np.power(1/3, n3)*(np.heaviside(n3, 1)-np.heaviside(n3-10, 1))
+h3 = np.power(0.9, n3)*(np.heaviside(n3-5, 1)-np.heaviside(n3, 1))
+y3 = convolution(x3, h3)
+y3 = y3[int(len(y3)/4) : -1 * int(len(y3)/4) -1]
 style.use('ggplot')
-plt.stem(n, y)
+plt.stem(n3, y3)
 plt.title('Part 3')
 plt.xlabel('X-Axis')
 plt.ylabel('Y-Axis')
